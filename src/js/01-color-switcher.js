@@ -15,3 +15,18 @@ refs.stop.addEventListener('click', () => {
   refs.start.removeAttribute('disabled');
   refs.stop.setAttribute('disabled', 'true');
 });
+
+function changeColorBody() {
+  intervalId = setInterval(() => {
+    document.body.style.background = getRandomHexColor();
+  }, 1000);
+}
+
+function setButtonAttribute() {
+  refs.start.setAttribute('disabled', 'true');
+  refs.stop.removeAttribute('disabled');
+}
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
