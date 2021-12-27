@@ -38,3 +38,7 @@ const options = {
 };
 
 flatpickr('#datetime-picker', options);
+// функція зароаняє нулями пусті поля двозначних цифр
+function addLeadingZero(value) {
+  return String(value).padStart(2, '0');
+}
