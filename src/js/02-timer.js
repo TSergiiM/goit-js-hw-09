@@ -80,3 +80,12 @@ function convertMs(ms) {
 
   return { days, hours, minutes, seconds };
 }
+//мінімальне оформлення
+const button = refs.start;
+button.style.backgroundColor = 'grey';
+button.style.fontSize = '24px';
+button.style.textAlign = 'center';
+
+const timer = refs.timer;
+timer.style.fontSize = '40px';
+timer.style.color = 'green';
