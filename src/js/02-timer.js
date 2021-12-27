@@ -20,3 +20,21 @@ let deltaTime;
 let selectedDate = null;
 refs.start.disabled = true;
 
+// налаштування flatpickr
+const options = {
+  enableTime: true,
+  time_24hr: true,
+  defaultDate: new Date(),
+  minuteIncrement: 1,
+  onClose(selectedDates) {
+    selectedDate = selectedDates[0];
+    // console.log('Selected:', selectedDate);
+    if (selectedDate <= options.defaultDate) {
+      Notify.failure('Please choose a date in the future');
+      return;
+    }
+    refs.start.disabled = false;
+  },
+};
+
+flatpickr('#datetime-picker', options);
