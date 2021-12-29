@@ -15,6 +15,13 @@ function onSubmit(event) {
   let steps = Number(step.value);
   let amounts = Number(amount.value);
   let position = 1;
+
+  // перевіряємо на від'ємне число(інакше вийде бяка)
+  if (delays < 0 || steps < 0) {
+    Notify.failure(`FirsDelay end Delay step - CANNOT BE NEGATIVE`);
+    return;
+  }
+
   // от як без цикла зробити?
   for (position; position <= amounts; position += 1) {
     createPromise(position, delays)
